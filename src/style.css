@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Oswald', sans-serif; 
+*/
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem;
+    color: #6F737F;
+}
+
+h1, h2, h3 {
+    margin: 0; 
+    color: #A59678;
+    font-family: 'Oswald', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+section {
+    /* color: white; */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* added for nav-toggle positioning */
+    position: relative;
+}
+
+header {
+    background: #2E323F;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.nav-toggle {
+    cursor: pointer;
+    border: 0;
+    width: 3em;
+    height: 3em;
+    padding: 0em;
+    border-radius: 50%;
+    background: #072A2D;
+    color: white;
+    transition: opacity 250ms ease;
+    
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+    opacity: .75;
+}
+
+.hamburger {
+    width: 50%;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    margin: 0 auto;
+    height: 3px;
+    background: white;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 100%;
+}
+
+.hamburger::before {
+    transform: translateY(-6px);
+}
+
+.hamburger::after {
+    transform: translateY(3px);
+}
+
+/* made changes here from video
+   to make it more accessible.
+   
+   Works the same :) */
+.nav {
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+    width: 100%;
+    font-family: 'Oswald', sans-serif;
+}
+
+.nav--visible {
+    visibility: visible;
+    height: auto;
+    position: relative;
+}
+
+.nav__list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav__item + .nav__item {
+    margin-top: .5em;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.nav__link--button {
+    background: #A59678;
+    color: #f5f5f5;
+    padding: .25em 1em;
+    border-radius: 10em;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+    opacity: .75;
+}
+
+.logo {
+    height: 30px;
+    display: block;
+}
+
+.hero {
+    width: 100%;
+    min-height: max(calc(100vh - 66px), 660px);
+    background-color: #3B4050;
+    display: flex;
+    align-items: center;
+}
+.hero__paragraph {
+    margin-bottom: 2em;
+}
+.hero__text {
+    margin: auto 0 0 5.5em;
+    font-size: 1.5rem;
+    color: #f5f5f5;
+    width: 55%;
+}
+
+.hero__title {
+    font-size: 90px;
+    line-height: 1;
+    width: 45%;
+}
+
+.hero__title--white {
+    color: #fff;
+}
+
+.btn {
+    font-family: 'Oswald',sans-serif;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase; 
+    color: #fff;
+    background-color: #A59678;
+    padding: .75em 2em;
+    border-radius: 100px;
+}
+
+.btn:hover,
+.btn:focus {
+    opacity: .75; 
+}
+
+section {
+    padding: 4em 0;
+}
+
+.section-two {
+    text-align: center;
+    background-color: #6F737F17;
+}
+
+.section-two__title {
+    font-size: 1.875rem;
+}
+
+.col + .col {
+    margin-left: 2em;
+}
+
+.section-three__title {
+    font-size: clamp(1.625rem, 1.66vw + 1.21rem, 2.25rem);
+    line-height: 1.2;
+}
+
+.section-three__paragraph {
+    font-size: clamp(0.875rem, 1.16vw + 0.58rem, 1.3125rem);
+    max-width: 66ch;
+}
+
+
+@media (min-width: 700px) {
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav {
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: auto;
+        position: relative;
+    }
+
+    .nav__list {
+        display: flex;
+        margin:0
+    }
+
+    .nav__list--primary {
+        /* flex-grow: 1;
+        justify-content: center; */
+        /* margin: 0 auto; */
+    }
+
+    .nav__list--secondary {
+        margin-left: 3em;
+    }
+
+    .nav__item + .nav__item {
+        margin-top: 0;
+        margin-left: 2em;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+/* 
+
+    .nav-toggle {
+        visibility: hidden;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .nav {
+        visibility: visible;
+        display: flex;
+        position: relative;
+    }
+
+    .nav__list {
+        display: flex;
+    }
+
+    .nav__item + .nav__item {
+        margin: 0;
+        margin-left: 3em;
+    } */
+}
